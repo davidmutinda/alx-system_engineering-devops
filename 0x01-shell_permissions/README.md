@@ -1,1 +1,1 @@
-This directory contains shell permissions
+This directory contains shell permission exercises
