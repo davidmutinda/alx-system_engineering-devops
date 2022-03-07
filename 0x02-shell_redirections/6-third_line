@@ -1,2 +1,2 @@
 #!/bin/bash
-head -n 3 iacta | tail -n + 3
+awk '{if(NR==4) print $0}' iacta
