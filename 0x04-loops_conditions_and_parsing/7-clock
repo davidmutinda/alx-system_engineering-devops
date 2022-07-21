@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This bash script prints hours and minutes
+
+hour=0
+min=1
+echo "Hour: $hour"
+while [ "$hour" -lt 13 ]
+do
+	if [ "$min" -eq 60 ]
+	then
+		min=1
+		hour=$((hour + 1))
+		if [ "$hour" -ne 13 ]
+		then
+			echo "Hour: $hour"
+		fi
+	else
+		echo "$min"
+		min=$((min + 1))
+	fi
+done
