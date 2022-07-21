@@ -7,5 +7,5 @@ do
 	then
 		break
 	fi
-	echo "Best school"
+	echo "Best School"
 done
