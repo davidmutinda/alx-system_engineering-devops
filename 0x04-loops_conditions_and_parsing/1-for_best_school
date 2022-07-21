@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This bash script displays 10 times
+
+for i in {0..10}
+do
+	if [ "$i" -eq 10 ]
+	then
+		break
+	fi
+	echo "Best school"
+done
