@@ -10,7 +10,7 @@ then
 elif [ "$1" = "stop" ]
 then
     xargs kill < "/var/run/my_process.pid"
-    rm ./my_process.pid
+    rm /var/run/my_process.pid
     echo "manage_my_process stopped"
 elif [ "$1" = "restart" ]
 then
