@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This bash script displays list of processes with bash
+ps -aux | grep bash
