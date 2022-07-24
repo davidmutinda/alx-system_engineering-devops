@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This bash script displays string indefinitely
+
+function invincible()
+{
+	echo "I am invincible!!!"
+}
+
+for (( ; ; ))
+do
+	trap invincible SIGTERM
+	echo "To infinity and beyond"
+	sleep 2
+done
