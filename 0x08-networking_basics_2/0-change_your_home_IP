@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Changes IPs tied to domain names
+# echo "8.8.8.8		facebook.com" | sudo tee -a /etc/hosts.old
+sudo bash -c 'echo "8.8.8.8         facebook.com" >> /etc/hosts'
+sudo sed -i "s/127.0.0.1/127.0.0.2/" /etc/hosts
