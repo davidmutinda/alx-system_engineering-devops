@@ -17,4 +17,4 @@ backend app-main
     server 21351-web-01	3.236.46.187:80 check
     server 21351-web-02	3.239.83.68:80 check
     " >> /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+sudo service haproxy restart
