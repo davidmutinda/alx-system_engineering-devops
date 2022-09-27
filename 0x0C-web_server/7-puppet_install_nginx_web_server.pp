@@ -20,14 +20,14 @@ service {'nginx':
 
 file { '/var/www/html/index.nginx-debian.html':
   ensure  => 'present',
-  content => 'Holberton School',
+  content => 'Hello World',
   require => Package['nginx']
 }
 
 file_line { 'perform a redirection':
   ensure  =>  'present',
   path    =>  '/etc/nginx/sites-enabled/default',
-  line    =>  'rewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  line    =>  'rewrite ^/redirect_me/$ http://davidkyalo.tech permanent;',
   after   =>  'root /var/www/html;',
   require =>  Package['nginx'],
   notify  =>  Service['nginx'],
