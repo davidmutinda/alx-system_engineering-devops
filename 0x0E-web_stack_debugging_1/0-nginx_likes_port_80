@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # This script fixes issue with nginx
 
-rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sed -i 's/ipv6only=on/ipv6only=off/g' /etc/nginx/sites-available/default
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx start
