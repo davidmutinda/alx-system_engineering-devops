@@ -33,18 +33,13 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www-http
-        bind 0.0.0.0:80
-        reqadd X-Fowarded-Proto:\http
-        default_backend www-backend
-
-frontend www-https
-        bind 0.0.0.0:443 ssl crt /etc/haproxy/certs/cert.pem
-        reqadd X-Fowarded-Proto:\https
+frontend www
+        bind *:80
+        bind *:443 ssl crt /etc/ssl/private/all.pem
+        http-request redirect scheme https unless { ssl_fc }
         default_backend www-backend
 
 backend www-backend
         balance roundrobin
-        redirect scheme https if !{ ssl_fc }
         server 21351-web-01     3.236.46.187:80 check
         server 21351-web-02     3.239.83.68:80 check
