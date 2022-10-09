@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script configures container so that Nginx is running as the nginx user
+
+service nginx stop
+chmod 644 /etc/nginx/nginx.conf
+sed -i "25i \\\tlisten 8000;" /etc/nginx/sites-available/default
+sudo -u nginx service nginx restart
