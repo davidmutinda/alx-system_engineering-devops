@@ -3,9 +3,8 @@
 This script returns information about his/her TODO list progress
 using a REST API, for a given employee ID,
 """
-# import requests
-from sys import argv
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
