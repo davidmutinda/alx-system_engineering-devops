@@ -3,8 +3,9 @@
 This script returns information about his/her TODO list progress
 using a REST API, for a given employee ID,
 """
-import requests
+# import requests
 from sys import argv
+import requests
 
 
 if __name__ == "__main__":
@@ -22,6 +23,7 @@ if __name__ == "__main__":
                 list_tasks.append(task.get('title'))
                 completed += 1
 
-    print("Employee {} is done with tasks({}/{}):".format(employee.get('name'), completed, total))
+    print("Employee {} is done with tasks({}/{}):".format(employee.get('name'),
+                                                          completed, total))
     for item in list_tasks:
         print("\t {}".format(item))
