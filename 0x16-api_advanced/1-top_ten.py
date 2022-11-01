@@ -14,6 +14,7 @@ def top_ten(subreddit):
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code != 200:
         print(None)
+        return
     array = response.json().get('data').get('children')
     for count, el in enumerate(array):
         if count == 10:
